@@ -26,7 +26,7 @@ public class JdbcCon {
 		return conn;
 	}
 	
-	public static void close(Connection conn) { // try catch와 여러 조건 관리하기 쉽기 위해 만든
+	public static void close(Connection conn) {
 		try {
 			if(conn!=null&&!conn.isClosed())
 			conn.close();
@@ -56,7 +56,7 @@ public class JdbcCon {
 	public static void commit(Connection conn) {
 		try {
 			if(conn!=null&&!conn.isClosed())
-				conn.close();
+				conn.commit();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
