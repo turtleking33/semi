@@ -8,10 +8,9 @@
 </head>
 <body>
 	
-	<span>학번</span><input type="text" value="<%= %>">
-    <span>성명</span><input type="text" value="<%= %>">
-    <span>주소</span><input type="text" value="<%= %>">
-    <span>이메일</span><input type="email" value="<%= %>">
+	<span>학번</span><input type="text" value="${getdto.stuid}">
+    <span>주소</span><input type="text" value="${getdto.address }">
+    <span>이메일</span><input type="text" value="${getdto.email }">
 
 </body>
 </html>

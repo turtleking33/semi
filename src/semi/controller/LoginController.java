@@ -32,13 +32,14 @@ public class LoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id=request.getParameter("stunum").toString();
+		String id=request.getParameter("stunum");
 		String pw=request.getParameter("passwd");
 		
 		int log=new LoginService().login(id, pw);
 		if(log==1) {
+			System.out.println("로그인");
 			request.getSession().setAttribute("lgn", 123123);
-			response.sendRedirect("/mypage.jsp");		
+			request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);		
 		}else {
 			response.sendRedirect("/");
 		}

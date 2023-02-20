@@ -8,9 +8,9 @@
 </head>
 <body>
 	<div>
-        <button onclick="myinfo" name="myinfo">내정보</button>
+        <button onclick="myinfo()" name="myinfo">내정보</button>
         <br>
-        <button onclick="myscore">학점확인</button>
+        <button onclick="myscore" name="myscore">학점확인</button>
     </div>
 
     <script>
@@ -19,7 +19,7 @@
         }
 
         function myscore(){
-            location.href="myinfo";
+            location.href="myscore";
         }
     </script>
 </body>

@@ -11,7 +11,7 @@ public class LoginDao {
 	
 	public int login(Connection conn, String id, String pw) {
 		LoginDto result=new LoginDto();
-		String sql="select count(*) from semistudent where STUID=? and STUNAME=?";
+		String sql="select count(*) from semilogin where STUID=? and STUPSS=?";
 		
 		PreparedStatement pstmt=null;
 		int login = -1;

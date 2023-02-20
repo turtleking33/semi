@@ -7,12 +7,12 @@ import semi.jdbc.JdbcCon;
 
 public class LoginService {
 	
-	public  int login(String id, String pw) {
+	public int login(String id, String pw) {
 		
 		Connection conn=JdbcCon.getConnection();
 		int daoResult=new LoginDao().login(conn, id, pw);
 		
-		JdbcCon.commit(conn);		
+		JdbcCon.close(conn);	
 		
 		return daoResult; 
 		
