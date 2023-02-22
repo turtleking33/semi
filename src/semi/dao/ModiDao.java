@@ -27,6 +27,7 @@ public class ModiDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			JdbcCon.commit(conn);
 			JdbcCon.close(pstmt);
 			
 		}

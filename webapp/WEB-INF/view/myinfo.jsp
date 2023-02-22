@@ -1,3 +1,4 @@
+<%@page import="semi.dto.ModiDto"%>
 <%@page import="semi.dto.StuInfoDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -17,20 +18,23 @@
     <fieldset>
     <span>이메일 </span><input type="text" value="${info.getEmail()}" name="email" id="email">
 	</fieldset>
-	<button onclick="modi();" id="modi">정보 수정</button>
+	<button onclick="modi()" id="modi">정보수정</button>
 	
 	<script>
+	<% ModiDto dto=(ModiDto)request.getAttribute("modi");%>
 		function modi(){
-			location.href="modi";
-			let innertext="";
-            
-			if(innertext=="확인") {
-			document.querySelector("#address").value="";
+			document.getElementById("modi").innerText="확인";
 			
-            }
+// 				location.href="modi";
 			
-    	}
-		
+		}
+// 			if(text=="확인") {
+<%-- 			document.querySelector("#address").setAttribute("value", "<%=dto.getAddress() %>"); --%>
+<%-- 			document.querySelector("#email").setAttribute("value", "<%=dto.getEmail() %>"); --%>
+			
+//             }
+			
+    			
 	</script>
 </body>
 </html>
