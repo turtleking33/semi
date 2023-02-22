@@ -20,9 +20,6 @@ public class JdbcCon {
 			e.printStackTrace();
 		}
 		
-		if(conn!=null) System.out.println("db연결 성공");
-		else System.out.println("db연결 실패");
-		
 		return conn;
 	}
 	

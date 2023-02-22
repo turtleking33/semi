@@ -10,7 +10,7 @@
 	<div>
         <button onclick="myinfo()" name="myinfo">내정보</button>
         <br>
-        <button onclick="myscore" name="myscore">학점확인</button>
+        <button onclick="myscore()" name="myscore">학점확인</button>
     </div>
 
     <script>

@@ -1,28 +1,23 @@
 package semi.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.Session;
-
-import semi.dto.StuInfoDto;
-import semi.service.InfoService;
 
 /**
- * Servlet implementation class MyinfoController
+ * Servlet implementation class ModiController
  */
-@WebServlet("/myinfo")
-public class MyinfoController extends HttpServlet {
+@WebServlet("/modi")
+public class ModiController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyinfoController() {
+    public ModiController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,20 +26,10 @@ public class MyinfoController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer inte=(Integer)request.getSession().getAttribute("lgn");
-		if(inte instanceof Integer) {
-			
-			StuInfoDto getdto=new InfoService().info(inte);
-			request.setAttribute("info", getdto);
 		
-			request.getRequestDispatcher("/WEB-INF/view/myinfo.jsp").forward(request, response);
 		
-		}else {
-		
-			request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);
-			
-		}
 		
 	}
-	
+
+
 }

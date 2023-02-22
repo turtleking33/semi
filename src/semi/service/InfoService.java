@@ -7,11 +7,11 @@ import semi.dto.StuInfoDto;
 import semi.jdbc.JdbcCon;
 
 public class InfoService {
-	public StuInfoDto info() {
+	public StuInfoDto info(Integer inte) {
 		Connection conn=JdbcCon.getConnection();
 		
-		StuInfoDto result=new StuInfoDao().info(conn);;
-		
+		StuInfoDto result=new StuInfoDao().info(conn, inte);
+		JdbcCon.close(conn);
 		return result;
 	}
 }

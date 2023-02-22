@@ -4,13 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import semi.dto.LoginDto;
 import semi.jdbc.JdbcCon;
 
 public class LoginDao {
 	
 	public int login(Connection conn, String id, String pw) {
-		LoginDto result=new LoginDto();
 		String sql="select count(*) from semilogin where STUID=? and STUPSS=?";
 		
 		PreparedStatement pstmt=null;

@@ -37,9 +37,8 @@ public class LoginController extends HttpServlet {
 		
 		int log=new LoginService().login(id, pw);
 		if(log==1) {
-			System.out.println("로그인");
 			request.getSession().setAttribute("lgn", 123123);
-			request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);		
+			request.getRequestDispatcher("/WEB-INF/view/mypage.jsp").forward(request, response);;
 		}else {
 			response.sendRedirect("/");
 		}

@@ -1,9 +1,9 @@
 package semi.dto;
 
 public class LoginDto {
-	String stuid;
-	String stuname;
 	
+	private String stuid;
+	private String stuname;
 	
 	public String getStuid() {
 		return stuid;

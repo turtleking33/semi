@@ -2,9 +2,9 @@ package semi.dto;
 
 public class StuInfoDto {
 	
-	int stuid;
-	String address;
-	String email;
+	private int stuid;
+	private String address;
+	private String email;
 	
 	public int getStuid() {
 		return stuid;

@@ -1,43 +1,45 @@
 package semi.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.websocket.Session;
 
-import semi.dto.StuInfoDto;
-import semi.service.InfoService;
+import semi.dto.ScoreDto;
+import semi.service.ScoreService;
 
 /**
- * Servlet implementation class MyinfoController
+ * Servlet implementation class MyscoreController
  */
-@WebServlet("/myinfo")
-public class MyinfoController extends HttpServlet {
+@WebServlet("/myscore")
+public class MyscoreController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MyinfoController() {
+    public MyscoreController() {
         super();
-        // TODO Auto-generated constructor stub
+        
+        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Integer inte=(Integer)request.getSession().getAttribute("lgn");
 		if(inte instanceof Integer) {
 			
-			StuInfoDto getdto=new InfoService().info(inte);
-			request.setAttribute("info", getdto);
+			List<ScoreDto> scorelist=new ScoreService().getscore(inte);
+			request.setAttribute("score", scorelist);
 		
-			request.getRequestDispatcher("/WEB-INF/view/myinfo.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/view/myscore.jsp").forward(request, response);
 		
 		}else {
 		
@@ -45,6 +47,10 @@ public class MyinfoController extends HttpServlet {
 			
 		}
 		
+		
+		
 	}
+
 	
+
 }
