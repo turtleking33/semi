@@ -10,10 +10,10 @@
 </head>
 <body>
 	<fieldset>
-	<span>학번 </span><span>${info.getStuid()}</span>
+	<span>학번 </span><span>${info.stuid}</span>
     </fieldset>
     <fieldset>
-    <span>주소 </span><input type="text" value="${info.getAddress()}" name="address" id="address">
+    <span>주소 </span><input type="text" value="${info.address}" name="address" id="address">
     </fieldset>
     <fieldset>
     <span>이메일 </span><input type="text" value="${info.getEmail()}" name="email" id="email">
